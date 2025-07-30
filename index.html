@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="input-name" placeholder="enter CIty name" />
+      <button type="button" id="search" onclick="fetchdata()">submit</button>
+    </div>
+    <div class="display">
+      <div id="city-name">CITY NAME</div>
+      <div id="date-time">
+        <span id="date"></span>
+        <span id="time"></span>
+      </div>
+      <div id="tem">Temp. : <span id="city-tem">NAN</span>deg</div>
+      <div id="humidity">Humidity : <span id="city-hum">NAN</span>%</div>
+      <div id="wind-speed">
+        Wind speed :
+        <span id="city-wind">NAN</span>km/hr
+      </div>
+      <div id="weather-main">Curr Weather</div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
