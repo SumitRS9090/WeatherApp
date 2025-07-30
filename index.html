@@ -4,25 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div>
-      <input type="text" id="input-name" placeholder="enter CIty name" />
-      <button type="button" id="search" onclick="fetchdata()">submit</button>
-    </div>
-    <div class="display">
-      <div id="city-name">CITY NAME</div>
-      <div id="date-time">
-        <span id="date"></span>
-        <span id="time"></span>
+    <div class="container background-css">
+      <div class="header">
+        <h1>Weather App</h1>
+        <div class="search-box">
+          <input type="text" id="input-name" placeholder="Enter city name..." />
+          <button type="button" id="search">Search</button>
+        </div>
       </div>
-      <div id="tem">Temp. : <span id="city-tem">NAN</span>deg</div>
-      <div id="humidity">Humidity : <span id="city-hum">NAN</span>%</div>
-      <div id="wind-speed">
-        Wind speed :
-        <span id="city-wind">NAN</span>km/hr
+
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Loading weather data...</p>
       </div>
-      <div id="weather-main">Curr Weather</div>
+
+      <div class="error-message" id="error-message"></div>
+
+      <div class="weather-card" id="weather-display">
+        <div class="weather-image-container">
+          <img class="weather-image" id="weather-image" src="" alt="Weather" />
+        </div>
+        <div id="city-name">Search for a city</div>
+        <div class="date-time" id="date-time">
+          <span id="date"></span>
+          <span id="time"></span>
+        </div>
+        <div class="temperature-main"><span id="city-temp">--</span>°C</div>
+        <div id="weather-main">Enter a city to see weather</div>
+
+        <div class="weather-details">
+          <div class="detail-item">
+            <div class="detail-label">Feels Like</div>
+            <div class="detail-value"><span id="feels-like">--</span>°C</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Humidity</div>
+            <div class="detail-value"><span id="city-hum">--</span>%</div>
+          </div>
+        </div>
+
+        <div class="additional-info">
+          <div class="detail-item">
+            <div class="detail-label">Wind Speed</div>
+            <div class="detail-value"><span id="city-wind">--</span> km/h</div>
+          </div>
+          <div class="detail-item">
+            <div class="detail-label">Pressure</div>
+            <div class="detail-value"><span id="pressure">--</span> hPa</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="initial-state" id="initial-state">
+        <h3>Welcome to Weather App</h3>
+        <p>Enter a city name to get current weather information</p>
+      </div>
     </div>
     <script src="script.js"></script>
   </body>
